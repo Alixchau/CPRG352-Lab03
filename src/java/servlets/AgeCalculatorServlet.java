@@ -48,6 +48,7 @@ public class AgeCalculatorServlet extends HttpServlet {
             if(Integer.parseInt(ageinput)<0){
             request.setAttribute("message", "You must give your current age.");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            return;
             }
             //condition 2: age input can not be non-numeric or null or other input that will cause exception
             nextbirthday = Integer.parseInt(ageinput) + 1;
